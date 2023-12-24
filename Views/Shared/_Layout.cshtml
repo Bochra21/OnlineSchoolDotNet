@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +22,8 @@
 
         <div class="main-container d-flex">
             @* Side bar start*@
-          
+             @if (SignInManager.IsSignedIn(User))
+            {
                 <div class="sidebar" id="side_nav">
                     <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
                         <H2>
@@ -83,7 +89,7 @@
                     </ul>
 
                 </div>
-      
+                 }
             @* Side bar end*@
 
 
@@ -127,7 +133,7 @@
                         </div> *@
 
                     </div>
-                 @*    <partial name="_LoginPartial"></partial> *@
+                    <partial name="_LoginPartial"></partial>
                 </nav>
                 @*    navbar end *@
                 @* content start *@
