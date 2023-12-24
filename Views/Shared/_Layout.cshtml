@@ -1,0 +1,175 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OnlineSchool</title>
+    <link rel="stylesheet" href="~/css/CssTheme.css" />
+    <link rel="stylesheet" href="~/css/SideBar.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OnlineSchoolWebApp.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+
+
+        <div class="main-container d-flex">
+            @* Side bar start*@
+          
+                <div class="sidebar" id="side_nav">
+                    <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+                        <H2>
+                            Welcome Admin
+                        </H2>
+                        <button class="btn d-md-none d-block close-btn px-1 py-0 text-white">
+                            <i class="fal fa-stream"></i>
+                        </button>
+                    </div>
+
+                    <ul class="list-unstyled px-2">
+                        <li> <H5>Etablissements</H5> </li>
+
+                        @*   <li class="active"> *@
+                        <li class="">
+                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="Etablissements" asp-action="Index">Etablissement</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
+                                <i class="fal fa-list"></i>
+                                Départements
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-decoration-none px-3 py-2 d-block d-flex justify-content-between">
+                                <span><i class="fal fa-comment"></i> Années scolaires</span>
+                                <span class="bg-dark rounded-pill text-white py-0 px-2">02</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
+                                <i class="fal fa-envelope-open-text"></i> Niveaux
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
+                                <i class="fal fa-users"></i>
+                                Cours
+                            </a>
+                        </li>
+                    </ul>
+                    <hr class="h-color mx-2">
+
+                    <ul class="list-unstyled px-2">
+                        <li> <H5>Membres</H5> </li>
+                        <li class="">
+                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
+                                <i class="fal fa-bell"></i>
+                                Enseignants
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
+                                <i class="fal fa-bell"></i>
+                                Etudiants
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="AppRoles" asp-action="Index">Roles</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+      
+            @* Side bar end*@
+
+
+            <div class="content">
+                @*    navbar start *@
+                <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+                    <div class="container-fluid">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        @*   <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+
+                        <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
+
+                        Home
+                        <span class="visually-hidden">(current)</span>
+                        </a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        </li>
+                        </ul>
+
+                        <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        </div> *@
+
+                    </div>
+                 @*    <partial name="_LoginPartial"></partial> *@
+                </nav>
+                @*    navbar end *@
+                @* content start *@
+                <div class="dashboard-content px-3 pt-4">
+                    <h2 class="fs-5"> </h2>
+                    <div class="container">
+
+                        @RenderBody()
+
+                    </div>
+                </div>
+                @* content end *@
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </header>
+
+
+
+
+
+
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Identitytest - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/SideBar.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
