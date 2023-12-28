@@ -8,7 +8,8 @@ using System.Data;
 namespace OnlineSchoolWebApp.Controllers
 {
 
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin,Student")]
     public class AppRolesController : Controller
 
     {

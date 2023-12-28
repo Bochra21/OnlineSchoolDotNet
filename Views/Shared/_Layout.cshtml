@@ -35,7 +35,17 @@
                     </div>
 
                     <ul class="list-unstyled px-2">
-                        <li> <H5>Etablissements</H5> </li>
+                        @if (User.IsInRole("Student"))
+                        {
+                            <li class="">
+                                <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="StudentHome" asp-action="Student_Index">Etablissement</a>
+                            </li>
+                        }
+                        else if (User.IsInRole("Admin"))
+                        {
+                            <li> <H5>Etablissements</H5> </li>
+                        }
+                       
 
                         @*   <li class="active"> *@
                         <li class="">

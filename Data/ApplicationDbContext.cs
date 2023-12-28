@@ -18,5 +18,19 @@ namespace OnlineSchoolWebApp.Data
         }
 
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<AnneeScolaire> AnneeScolaire { get;set; }
+        public DbSet<Classe> Classe { get; set; }
+        public DbSet<Cours> Cours { get; set; }
+        public DbSet<Departement> Departement { get; set; }
+
+        public DbSet<Enseignant> Enseignant { get; set; } 
+
+        public DbSet<Etudiant> Etudiant { get; set; }
+
+        public DbSet<Etablissement> Etablissement { get; set;}
+        public DbSet<Niveau> Niveau { get; set; }
+        public DbSet<Note> Note { get; set; }
+
+
     }
 }
