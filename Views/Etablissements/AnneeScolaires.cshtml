@@ -1,0 +1,24 @@
+﻿@model List<AnneeScolaire>
+
+<h1>Annee Scolaires</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date Début</th>
+            <th>Date Fin</th>
+        </tr>
+       
+    </thead>
+    <tbody>
+        @foreach (var anneeScolaire in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(anneeScolaire.DateDebut.ToString(), "Details", "AnneeScolaires", new { id = anneeScolaire.AnneeScolaireId }, null)</td>
+             
+                <td>@Html.ActionLink(anneeScolaire.DateFin.ToString(), "Details", "AnneeScolaires", new { id = anneeScolaire.AnneeScolaireId }, null)</td>
+             
+            </tr>
+        }
+    </tbody>
+</table>

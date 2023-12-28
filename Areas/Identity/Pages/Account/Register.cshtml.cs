@@ -131,14 +131,27 @@ namespace Identitytest.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
-            Input = new InputModel()
+            Input = new InputModel();
+
+            var roles = _roleManager.Roles.Select(x => x.Name).ToList();
+
+            if (roles.Any())
             {
-                RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+                Input.RoleList = roles.Select(i => new SelectListItem
                 {
                     Text = i,
                     Value = i
-                })
-            };
+                });
+            }
+            else
+            {
+                // Add "admin" role if the role list is empty
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                Input.RoleList = new List<SelectListItem>
+        {
+            new SelectListItem { Text = "Admin", Value = "Admin" }
+        };
+            }
 
         }
 

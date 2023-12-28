@@ -21,13 +21,14 @@
 
 
         <div class="main-container d-flex">
+
             @* Side bar start*@
-             @if (SignInManager.IsSignedIn(User))
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
             {
                 <div class="sidebar" id="side_nav">
                     <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
                         <H2>
-                            Welcome 
+                            Welcome Admin
                         </H2>
                         <button class="btn d-md-none d-block close-btn px-1 py-0 text-white">
                             <i class="fal fa-stream"></i>
@@ -35,47 +36,30 @@
                     </div>
 
                     <ul class="list-unstyled px-2">
-                        @if (User.IsInRole("Student"))
-                        {
-                            <li class="">
-                                <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="StudentHome" asp-action="Student_Index">Etablissement</a>
-                            </li>
-                        }
-                        else if (User.IsInRole("Admin"))
-                        {
-                            <li> <H5>Etablissements</H5> </li>
-                        }
-                       
-
-                        @*   <li class="active"> *@
                         <li class="">
-                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="Etablissements" asp-action="Index">Etablissement</a>
+                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="Etablissements" asp-action="Index">Etablissements</a>
                         </li>
 
                         <li class="">
-                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
-                                <i class="fal fa-list"></i>
-                                Départements
-                            </a>
+                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="AnneeScolaires" asp-action="Index">Années scolaires</a>
                         </li>
+
                         <li class="">
-                            <a href="#" class="text-decoration-none px-3 py-2 d-block d-flex justify-content-between">
-                                <span><i class="fal fa-comment"></i> Années scolaires</span>
-                                <span class="bg-dark rounded-pill text-white py-0 px-2">02</span>
-                            </a>
+                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="Departements" asp-action="Index">Départements</a>
                         </li>
+
                         <li class="">
-                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
-                                <i class="fal fa-envelope-open-text"></i> Niveaux
-                            </a>
+                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="Niveaux" asp-action="Index">Niveaux</a>
                         </li>
+
+
                         <li class="">
-                            <a href="#" class="text-decoration-none px-3 py-2 d-block">
-                                <i class="fal fa-users"></i>
-                                Cours
-                            </a>
+                            <a class="text-decoration-none px-3 py-2 d-block" asp-area="" asp-controller="Classes" asp-action="Index">Classes</a>
                         </li>
+
+
                     </ul>
+
                     <hr class="h-color mx-2">
 
                     <ul class="list-unstyled px-2">
@@ -97,10 +81,12 @@
                         </li>
 
                     </ul>
-
-                </div>
-                 }
+                </div> 
+            }
             @* Side bar end*@
+
+
+
 
 
             <div class="content">
@@ -112,36 +98,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        @*   <div class="collapse navbar-collapse" id="navbarColor01">
-                        <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-
-                        <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
-
-                        Home
-                        <span class="visually-hidden">(current)</span>
-                        </a>
-                        </li>
-
-
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                        </li>
-                        </ul>
-
-                        <form class="d-flex">
-                        <input class="form-control me-sm-2" type="search" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                        </div> *@
-
+                     
                     </div>
                     <partial name="_LoginPartial"></partial>
                 </nav>
@@ -159,8 +116,6 @@
 
             </div>
         </div>
-
-
 
 
 

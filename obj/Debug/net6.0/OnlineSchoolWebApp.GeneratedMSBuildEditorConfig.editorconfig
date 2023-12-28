@@ -176,6 +176,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/AnneeScolaires/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5uZWVTY29sYWlyZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/AnneeScolaires/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5uZWVTY29sYWlyZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/AnneeScolaires/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5uZWVTY29sYWlyZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/AnneeScolaires/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5uZWVTY29sYWlyZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/AnneeScolaires/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5uZWVTY29sYWlyZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/AppRoles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwUm9sZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -184,12 +204,96 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Classes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Classes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Classes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Classes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Classes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Departements/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0ZW1lbnRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Departements/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0ZW1lbnRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Departements/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0ZW1lbnRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Departements/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0ZW1lbnRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Departements/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0ZW1lbnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Etablissements/AnneeScolaires.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhYmxpc3NlbWVudHNcQW5uZWVTY29sYWlyZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Etablissements/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhYmxpc3NlbWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Etablissements/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhYmxpc3NlbWVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Etablissements/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhYmxpc3NlbWVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Etablissements/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhYmxpc3NlbWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Etablissements/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhYmxpc3NlbWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Niveaux/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTml2ZWF1eFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Niveaux/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTml2ZWF1eFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Niveaux/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTml2ZWF1eFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Niveaux/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTml2ZWF1eFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Niveaux/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTml2ZWF1eFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/bochr/Education/epi/semestre3/C\#/OnlineSchoolWebApp/Views/Shared/Error.cshtml]
