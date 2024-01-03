@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -48,7 +49,7 @@ namespace OnlineSchoolWebApp.Controllers
         // GET: AnneeScolaires/Create
         public IActionResult Create()
         {
-            // display etab name 
+            // display etablissement name 
             ViewData["EtablissementId"] = new SelectList(_context.Etablissement, "EtablissementId", "Nom");
             return View();
         }
@@ -167,5 +168,68 @@ namespace OnlineSchoolWebApp.Controllers
         {
           return (_context.AnneeScolaire?.Any(e => e.AnneeScolaireId == id)).GetValueOrDefault();
         }
+
+
+        //public async Task<IActionResult> GetDepartmentByYearPartial(int? id)
+        //{
+        //    if (id == null || _context.AnneeScolaire == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var schoolYear = await _context.AnneeScolaire
+        //        .Include(e => e.Departements)
+        //        .FirstOrDefaultAsync(m => m.AnneeScolaireId == id);
+
+        //    if (schoolYear == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    Debug.WriteLine("Departements in schoolYear:");
+        //    foreach (var department in schoolYear.Departements)
+        //    {
+        //        Debug.WriteLine(department.Nom);
+        //    }
+        //    return PartialView("_DepartmentsPartial", schoolYear.Departements.ToList());
+        //}
+
+
+        public async Task<IActionResult> YourAction(int? id)
+        {
+            if (id == null || _context.AnneeScolaire == null)
+            {
+                return NotFound();
+            }
+
+            var schoolYear = await _context.AnneeScolaire
+                .Include(e => e.Departements)
+                .FirstOrDefaultAsync(m => m.AnneeScolaireId == id);
+
+            if (schoolYear == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new SchoolViewModel
+            {
+                AnneeScolaire = schoolYear,
+                Departements = schoolYear.Departements.ToList()
+            };
+            // Add this for debugging
+            Debug.WriteLine($"Number of Departements: {viewModel.Departements.Count}");
+
+            return View(viewModel);
+        }
+
+
+
     }
+    public class SchoolViewModel
+    {
+        public AnneeScolaire AnneeScolaire { get; set; }
+        public List<Departement> Departements { get; set; }
+    }
+
+
 }

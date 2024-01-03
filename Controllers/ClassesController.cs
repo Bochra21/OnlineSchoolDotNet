@@ -48,7 +48,7 @@ namespace OnlineSchoolWebApp.Controllers
         // GET: Classes/Create
         public IActionResult Create()
         {
-            ViewData["NiveauId"] = new SelectList(_context.Niveau, "NiveauId", "NiveauId");
+            ViewData["NiveauId"] = new SelectList(_context.Niveau, "NiveauId", "Nom");
             return View();
         }
 

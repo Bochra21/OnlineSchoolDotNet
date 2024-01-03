@@ -46,9 +46,15 @@ namespace OnlineSchoolWebApp.Controllers
         }
 
         // GET: Departements/Create
+        //public IActionResult Create()
+        //{
+        //    // display etablissement name 
+        //    ViewData["EtablissementId"] = new SelectList(_context.Etablissement, "EtablissementId", "Nom");
+        //    return View();
+        //}
         public IActionResult Create()
         {
-            ViewData["AnneeId"] = new SelectList(_context.AnneeScolaire, "AnneeScolaireId", "AnneeScolaireId");
+            ViewData["AnneeId"] = new SelectList(_context.AnneeScolaire, "AnneeScolaireId", "DateDebut");
             return View();
         }
 

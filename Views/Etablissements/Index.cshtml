@@ -1,4 +1,4 @@
-﻿@* @model IEnumerable<OnlineSchoolWebApp.Models.Etablissement>
+﻿@model IEnumerable<OnlineSchoolWebApp.Models.Etablissement>
 
 @{
     ViewData["Title"] = "Index";
@@ -18,56 +18,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Adresse)
             </th>
+            <th>Années Scolaires</th> <!-- New column for AnneeScolaires link -->
             <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                  
-                @Html.DisplayFor(modelItem => item.Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adresse)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EtablissementId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EtablissementId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EtablissementId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
- *@
-
-
-
-
-
-@model IEnumerable<OnlineSchoolWebApp.Models.Etablissement>
-
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Adresse)
-            </th>
             <th></th>
-            <th>Details</th> <!-- New column for AnneeScolaires link -->
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -80,13 +34,29 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Adresse)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.EtablissementId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.EtablissementId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.EtablissementId">Delete</a>
-                </td>
+               
                 <td>
                     <a asp-action="AnneeScolaires" asp-route-id="@item.EtablissementId">Annee Scolaires</a>
+                </td>
+                <td>
+                    <form asp-action="Edit" asp-route-id="@item.EtablissementId" method="get">
+                        <button type="submit" class="btn btn-outline-secondary">Modifier</button>
+                    </form>
+                </td>
+            
+            
+                <td>
+                    <form asp-action="Details" asp-route-id="@item.EtablissementId" method="get">
+                        <button type="submit" class="btn btn-outline-success">Détails</button>
+                    </form>
+                </td>
+            
+           
+                <td>
+                    <form asp-action="Delete" asp-route-id="@item.EtablissementId" method="get">
+                        <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+                    </form>
+
                 </td>
             </tr>
         }

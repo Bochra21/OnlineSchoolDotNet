@@ -48,7 +48,7 @@ namespace OnlineSchoolWebApp.Controllers
         // GET: Niveaux/Create
         public IActionResult Create()
         {
-            ViewData["DepartementId"] = new SelectList(_context.Departement, "DepartementId", "DepartementId");
+            ViewData["DepartementId"] = new SelectList(_context.Departement, "DepartementId", "Nom");
             return View();
         }
 
@@ -82,7 +82,7 @@ namespace OnlineSchoolWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["DepartementId"] = new SelectList(_context.Departement, "DepartementId", "DepartementId", niveau.DepartementId);
+            ViewData["DepartementId"] = new SelectList(_context.Departement, "DepartementId", "Nom", niveau.DepartementId);
             return View(niveau);
         }
 

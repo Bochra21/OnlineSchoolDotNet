@@ -1,0 +1,15 @@
+﻿@model List<OnlineSchoolWebApp.Models.Departement>
+
+<div class="row">
+    @foreach (var departement in Model)
+    {
+        <div class="col-md-4">
+            <div class="card border-info mb-3" style="max-width: 20rem;">
+                <div class="card-header">Département</div>
+                <div class="card-body">
+                    <h4 class="card-title">@departement.Nom</h4>
+                </div>
+            </div>
+        </div>
+    }
+</div>

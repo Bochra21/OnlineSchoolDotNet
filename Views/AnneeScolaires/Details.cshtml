@@ -4,10 +4,14 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+
 
 <div>
-    <h4>AnneeScolaire</h4>
+    <h4>Année Scolaire</h4>
+    @* <div>
+        <a asp-action="Edit" asp-route-id="@Model?.AnneeScolaireId">Modifier</a> |
+        <a asp-action="Index">Retour</a>
+    </div> *@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -29,8 +33,60 @@
             @Html.DisplayFor(model => model.Etablissement.Nom)
         </dd>
     </dl>
+
+    <div class="container">
+        @* <div class="row">
+            <div class="col-md-4">
+                <div class="card border-info mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Département</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Informatique</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-info mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Département</div>
+                    <div class="card-body">
+                        <h4 class="card-title">electromecanique</h4>
+                    </div>
+                </div>
+            </div>
+
+              <div class="col-md-4">
+                <div class="card border-info mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Département</div>
+                    <div class="card-body">
+                        <h4 class="card-title">electromecanique</h4>
+                    </div>
+                </div>
+            </div>
+        </div> *@
+
+        <div class="row">
+            @if (Model.Departements != null)
+            {
+                @foreach (var departement in Model.Departements)
+                {
+                    <div class="col-md-4">
+                        <div class="card border-info mb-3" style="max-width: 20rem;">
+                            <div class="card-header">Département</div>
+                            <div class="card-body">
+                                <h4 class="card-title">@departement.Nom</h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+
+       @*  <div class="container">
+            @await Html.PartialAsync("_DepartmentsPartial", Model.Departements.ToList())
+        </div> *@
+    </div>
+
+
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.AnneeScolaireId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
