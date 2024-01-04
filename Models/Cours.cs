@@ -9,10 +9,10 @@ namespace OnlineSchoolWebApp.Models
 
         public string Nom { get; set; } = null!;
 
-        public int? EtudiantId { get; set; }
+        public int? ClasseId { get; set; }
         public int? EnseignantId { get; set; }
 
-        public virtual Etudiant? Etudiant { get; set; }
+        public virtual Classe? Classe { get; set; }
         public virtual Enseignant? Enseignant { get; set; }
 
         public virtual ICollection<Note> Notes { get; set; } = new List<Note>();

@@ -31,6 +31,31 @@ namespace OnlineSchoolWebApp.Data
         public DbSet<Niveau> Niveau { get; set; }
         public DbSet<Note> Note { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
+            // Configure the relationship with cascade delete
+            modelBuilder.Entity<Etablissement>()
+                .HasMany(e => e.AnneeScolaires)
+                .WithOne(a => a.Etablissement)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AnneeScolaire>()
+              .HasMany(e => e.Departements)
+              .WithOne(a => a.Annee)
+              .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Departement>()
+            .HasMany(e => e.Niveaux)
+            .WithOne(a => a.Departement)
+            .OnDelete(DeleteBehavior.Cascade);
+
+
+            modelBuilder.Entity<Niveau>()
+              .HasMany(e => e.Classes)
+              .WithOne(a => a.Niveau)
+              .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

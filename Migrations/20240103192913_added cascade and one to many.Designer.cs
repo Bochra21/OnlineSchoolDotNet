@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineSchoolWebApp.Data;
 
@@ -11,9 +12,11 @@ using OnlineSchoolWebApp.Data;
 namespace OnlineSchoolWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240103192913_added cascade and one to many")]
+    partial class addedcascadeandonetomany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -286,16 +289,16 @@ namespace OnlineSchoolWebApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoursId"));
 
-                    b.Property<int?>("ClasseId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("EnseignantId")
                         .HasColumnType("int");
 
                     b.Property<string>("EnseignantId1")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("EtudiantId")
+                    b.Property<int?>("EtudiantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EtudiantId1")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Nom")
@@ -304,11 +307,9 @@ namespace OnlineSchoolWebApp.Migrations
 
                     b.HasKey("CoursId");
 
-                    b.HasIndex("ClasseId");
-
                     b.HasIndex("EnseignantId1");
 
-                    b.HasIndex("EtudiantId");
+                    b.HasIndex("EtudiantId1");
 
                     b.ToTable("Cours");
                 });
@@ -532,29 +533,24 @@ namespace OnlineSchoolWebApp.Migrations
 
             modelBuilder.Entity("OnlineSchoolWebApp.Models.Cours", b =>
                 {
-                    b.HasOne("OnlineSchoolWebApp.Models.Classe", "Classe")
-                        .WithMany("Cours")
-                        .HasForeignKey("ClasseId");
-
                     b.HasOne("OnlineSchoolWebApp.Models.Enseignant", "Enseignant")
                         .WithMany("Cours")
                         .HasForeignKey("EnseignantId1");
 
-                    b.HasOne("OnlineSchoolWebApp.Models.Etudiant", null)
+                    b.HasOne("OnlineSchoolWebApp.Models.Etudiant", "Etudiant")
                         .WithMany("Cours")
-                        .HasForeignKey("EtudiantId");
-
-                    b.Navigation("Classe");
+                        .HasForeignKey("EtudiantId1");
 
                     b.Navigation("Enseignant");
+
+                    b.Navigation("Etudiant");
                 });
 
             modelBuilder.Entity("OnlineSchoolWebApp.Models.Departement", b =>
                 {
                     b.HasOne("OnlineSchoolWebApp.Models.AnneeScolaire", "Annee")
                         .WithMany("Departements")
-                        .HasForeignKey("AnneeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AnneeId");
 
                     b.Navigation("Annee");
                 });
@@ -563,8 +559,7 @@ namespace OnlineSchoolWebApp.Migrations
                 {
                     b.HasOne("OnlineSchoolWebApp.Models.Departement", "Departement")
                         .WithMany("Niveaux")
-                        .HasForeignKey("DepartementId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DepartementId");
 
                     b.Navigation("Departement");
                 });
@@ -611,8 +606,6 @@ namespace OnlineSchoolWebApp.Migrations
 
             modelBuilder.Entity("OnlineSchoolWebApp.Models.Classe", b =>
                 {
-                    b.Navigation("Cours");
-
                     b.Navigation("Etudiants");
                 });
 

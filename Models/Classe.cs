@@ -16,6 +16,7 @@ namespace OnlineSchoolWebApp.Models
         public virtual Niveau? Niveau { get; set; }
 
         public virtual ICollection<Etudiant> Etudiants { get; set; } = new List<Etudiant>();
+        public virtual ICollection<Cours> Cours { get; set; } = new List<Cours>();
 
 
 

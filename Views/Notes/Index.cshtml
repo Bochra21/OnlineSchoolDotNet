@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OnlineSchoolWebApp.Models.Note>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EtudiantId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoteValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoteDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EtudiantId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cours.CoursId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NoteId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NoteId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NoteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
