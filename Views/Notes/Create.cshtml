@@ -24,12 +24,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Etudiant" class="control-label"></label>
-                <select asp-for="EtudiantId" class="form-control" asp-items="ViewBag.Nom"></select>
+                <select asp-for="EtudiantId" class="form-control" asp-items="ViewBag.EtudiantId"></select>
                 <span asp-validation-for="EtudiantId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cours" class="control-label"></label>
-                <select asp-for="CoursId" class ="form-control" asp-items="ViewBag.Nom"></select>
+                <select asp-for="CoursId" class="form-control" asp-items="ViewBag.CoursId"></select>
                 <span asp-validation-for="CoursId" class="text-danger"></span>
             </div>
             <div class="form-group">

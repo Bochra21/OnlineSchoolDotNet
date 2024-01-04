@@ -6,37 +6,36 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OnlineSchoolWebApp.Controllers
 {
-    public class StudentController : Controller
+    public class TeacherController : Controller
     {
 
         private readonly ApplicationDbContext _dbContext;
 
-        public StudentController(ApplicationDbContext dbContext)
+        public TeacherController(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
 
 
-        public async Task<IActionResult> DisplayStudents()
+        public async Task<IActionResult> DisplayTeachers()
         {
             var roleId = await _dbContext.Roles
-                .Where(r => r.Name == "Student")
+                .Where(r => r.Name == "Teacher")
                 .Select(r => r.Id)
                 .FirstOrDefaultAsync();
 
-            if (roleId == null)
-            {
-                // Handle the case where the "Student" role does not exist
-                // e.g., display an error message or redirect to an error page
-            }
+            //if (roleId == null)
+            //{
+               
+            //}
 
             var userIds = await _dbContext.UserRoles
                 .Where(ur => ur.RoleId == roleId)
                 .Select(ur => ur.UserId)
                 .ToListAsync();
 
-            var students = await _dbContext.Users
+            var teachers = await _dbContext.Users
                 .OfType<ApplicationUser>()
                 .Where(u => userIds.Contains(u.Id))
                 .Select(u => new ApplicationUser
@@ -46,7 +45,7 @@ namespace OnlineSchoolWebApp.Controllers
                 })
                 .ToListAsync();
 
-            return View(students);
+            return View(teachers);
         }
 
     }

@@ -45,22 +45,54 @@ namespace OnlineSchoolWebApp.Controllers
             return View(note);
         }
 
-        // GET: Notes/Create
-        public IActionResult Create()
-        {
-            // Assuming you have access to the student information based on your context
-            // Replace "StudentInfo" with the actual property or method that retrieves student information
-            var studentInfo = _context.Etudiant.FirstOrDefault();
 
+        public async Task<List<ApplicationUser>> DisplayStudents()
+        {
+            var roleId = await _context.Roles
+                .Where(r => r.Name == "Student")
+                .Select(r => r.Id)
+                .FirstOrDefaultAsync();
+
+            if (roleId == null)
+            {
+                // Handle the case where the "Student" role does not exist
+                // e.g., display an error message or redirect to an error page
+                return null;
+            }
+
+            var userIds = await _context.UserRoles
+                .Where(ur => ur.RoleId == roleId)
+                .Select(ur => ur.UserId)
+                .ToListAsync();
+
+            var students = await _context.Users
+                .OfType<ApplicationUser>()
+                .Where(u => userIds.Contains(u.Id))
+                .Select(u => new ApplicationUser
+                {
+                    Id = u.Id,
+                    FirstName = u.FirstName,
+                    LastName = u.LastName
+                })
+                .ToListAsync();
+
+            return students;
+        }
+
+        // GET: Notes/Create
+        public async Task<IActionResult> Create()
+        {
             ViewData["CoursId"] = new SelectList(_context.Cours, "CoursId", "Nom");
-            ViewData["EtudiantId"] = new SelectList(_context.Cours, "EtudiantId", "Nom");
+            var students = await DisplayStudents();
+            ViewData["EtudiantId"] = new SelectList(students, "Id", "LastName");
             return View();
         }
 
-            // POST: Notes/Create
-            // To protect from overposting attacks, enable the specific properties you want to bind to.
-            // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-            [HttpPost]
+
+        // POST: Notes/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("NoteId,NoteValue,NoteDesc,EtudiantId,CoursId")] Note note)
         {

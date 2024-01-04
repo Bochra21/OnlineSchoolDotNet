@@ -45,11 +45,46 @@ namespace OnlineSchoolWebApp.Controllers
             return View(cours);
         }
 
+
+        public async Task<List<ApplicationUser>> DisplayTeachers()
+        {
+            var roleId = await _context.Roles
+                .Where(r => r.Name == "Teacher")
+                .Select(r => r.Id)
+                .FirstOrDefaultAsync();
+
+            if (roleId == null)
+            {
+               
+            }
+
+            var userIds = await _context.UserRoles
+                .Where(ur => ur.RoleId == roleId)
+                .Select(ur => ur.UserId)
+                .ToListAsync();
+
+            var teachers = await _context.Users
+                .OfType<ApplicationUser>()
+                .Where(u => userIds.Contains(u.Id))
+                .Select(u => new ApplicationUser
+                {
+                    Id = u.Id, 
+                    FirstName = u.FirstName,
+                    LastName = u.LastName
+                })
+                .ToListAsync();
+
+            return teachers;
+        }
+
         // GET: Cours/Create
-        public IActionResult Create()
+
+
+        public async Task<IActionResult> Create()
         {
             ViewData["ClasseId"] = new SelectList(_context.Classe, "ClasseId", "Nom");
-            ViewData["EnseignantId"] = new SelectList(_context.Classe, "EnseignantId", "Nom");
+            var teachers = await DisplayTeachers();
+            ViewData["EnseignantId"] = new SelectList(teachers, "Id", "LastName");
             return View();
         }
 
